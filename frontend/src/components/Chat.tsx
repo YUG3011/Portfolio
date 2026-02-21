@@ -6,7 +6,10 @@ export default function Chat() {
   const [text, setText] = useState('')
   const [msgs, setMsgs] = useState<Msg[]>([])
   const [loading, setLoading] = useState(false)
-  const apiBase = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '')
+  const configuredApiBase = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '')
+  const defaultProdApiBase = 'https://portfolio-txnn.onrender.com'
+  const isVercelHost = typeof window !== 'undefined' && window.location.hostname.endsWith('vercel.app')
+  const apiBase = configuredApiBase || (isVercelHost ? defaultProdApiBase : '')
 
   async function send() {
     if (!text.trim()) return
