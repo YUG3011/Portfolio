@@ -2,6 +2,7 @@ import os
 import time
 import logging
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from dotenv import load_dotenv
 from resume_loader import load_resume_text
@@ -40,6 +41,21 @@ Certificates: Google AI Essential (Coursera); MERN Stack (Simplilearn); Linux Es
 """
 
 app = FastAPI()
+
+ALLOWED_ORIGINS = [
+    "https://portfolio-virid-six-qe701qheol.vercel.app",
+]
+extra_origins = os.getenv("FRONTEND_ORIGINS", "").strip()
+if extra_origins:
+    ALLOWED_ORIGINS.extend([origin.strip() for origin in extra_origins.split(",") if origin.strip()])
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=ALLOWED_ORIGINS,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # basic logging
 logging.basicConfig(level=logging.INFO)

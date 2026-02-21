@@ -6,6 +6,7 @@ export default function Chat() {
   const [text, setText] = useState('')
   const [msgs, setMsgs] = useState<Msg[]>([])
   const [loading, setLoading] = useState(false)
+  const apiBase = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '')
 
   async function send() {
     if (!text.trim()) return
@@ -38,7 +39,7 @@ export default function Chat() {
 
     setLoading(true)
     try {
-      const r = await fetch('/api/chat', {
+      const r = await fetch(`${apiBase}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question: q })
