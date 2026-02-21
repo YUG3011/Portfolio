@@ -53,7 +53,17 @@ export default function App() {
     'MERN Stack — Simplilearn',
     'Linux Essentials — Cisco',
     'Python for Data-Science — IBM',
-    'Java Programming Fundamentals — Infosys'
+    'Java Programming Fundamentals — Infosys',
+    'MATLAB — Advance Your Career with MATLAB Programming',
+    'J2EE Comprehensive Training Course',
+    'Beginning Java Data Structures and Algorithms',
+    'CSS3',
+    'Database and SQL',
+    'Networking Essentials',
+    'Android Material Design — The Fundamentals',
+    'Basic C# Programming',
+    'Building Recommender Systems with Machine Learning and AI',
+    'Software Testing Fundamentals'
   ]
 
   const experience = [

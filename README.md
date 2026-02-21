@@ -31,4 +31,3 @@ Notes
 
 Submission
 
-When ready, please fill the submission form: https://forms.gle/7AkdJbKDtj4chqqWA

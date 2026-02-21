@@ -36,7 +36,7 @@ Technical Skills:
 - Backend: Node.js, Express.js, REST APIs
 - Databases: MongoDB, PostgreSQL
 - DevOps/Tools: Docker, Git, GitHub, Render, Vercel
-Certificates: Google AI Essential (Coursera); MERN Stack (Simplilearn); Linux Essentials (Cisco); Python for Data-Science (IBM); Java Programming Fundamentals (Infosys)
+Certificates: Google AI Essential (Coursera); MERN Stack (Simplilearn); Linux Essentials (Cisco); Python for Data-Science (IBM); Java Programming Fundamentals (Infosys); MATLAB — Advance Your Career with MATLAB Programming; J2EE Comprehensive Training Course; Beginning Java Data Structures and Algorithms; CSS3; Database and SQL; Networking Essentials; Android Material Design — The Fundamentals; Basic C# Programming; Building Recommender Systems with Machine Learning and AI; Software Testing Fundamentals
 """
 
 app = FastAPI()
@@ -130,7 +130,7 @@ async def chat(q: Question):
     if wants_ach or wants_email or wants_phone or wants_location:
         parts = []
         if wants_ach:
-            parts.append("Certificates & Achievements: Google AI Essential (Coursera); MERN Stack (Simplilearn); Linux Essentials (Cisco); Python for Data-Science (IBM); Java Programming Fundamentals (Infosys)")
+            parts.append("Certificates & Achievements: Google AI Essential (Coursera); MERN Stack (Simplilearn); Linux Essentials (Cisco); Python for Data-Science (IBM); Java Programming Fundamentals (Infosys); MATLAB — Advance Your Career with MATLAB Programming; J2EE Comprehensive Training Course; Beginning Java Data Structures and Algorithms; CSS3; Database and SQL; Networking Essentials; Android Material Design — The Fundamentals; Basic C# Programming; Building Recommender Systems with Machine Learning and AI; Software Testing Fundamentals")
         if wants_email:
             parts.append("Email: yug30112005@gmail.com")
         if wants_phone:
