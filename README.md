@@ -12,7 +12,6 @@ python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
 copy .env.example .env
-# edit .env: set OPENROUTER_API_KEY and RESUME_PATH (path to your Yug Resume_tp.pdf)
 uvicorn main:app --reload --port 8000
 ```
 
@@ -24,10 +23,4 @@ npm install
 npm run dev
 ```
 
-Notes
-- The backend reads the resume at `RESUME_PATH` (default `../Yug Resume_tp.pdf`). Replace if needed.
-- Set `OPENROUTER_API_KEY` in the backend `.env`. You can sign up at openrouter.ai and use a free model.
-- Optionally set `MONGODB_URI` to log chats.
-
-Submission
 
