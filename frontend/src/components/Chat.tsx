@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 
 type Msg = { from: 'user' | 'bot'; text: string }
 
@@ -41,6 +41,8 @@ export default function Chat() {
     }
 
     setLoading(true)
+    // add an interim typing indicator message
+    setMsgs((m) => [...m, { from: 'bot', text: 'Thinking...' }])
     try {
       const r = await fetch(`${apiBase}/api/chat`, {
         method: 'POST',
@@ -50,22 +52,52 @@ export default function Chat() {
       const j = await r.json()
       if (!r.ok) {
         const detail = j?.detail || `Request failed (${r.status})`
-        setMsgs((m) => [...m, { from: 'bot', text: String(detail) }])
+        // replace the interim typing message with the error
+        setMsgs((m) => {
+          const withoutTyping = m.slice(0, -1)
+          return [...withoutTyping, { from: 'bot', text: String(detail) }]
+        })
         return
       }
-      setMsgs((m) => [...m, { from: 'bot', text: j.answer || 'No answer returned by model' }])
+      // replace the interim typing message with the real answer
+      setMsgs((m) => {
+        const withoutTyping = m.slice(0, -1)
+        return [...withoutTyping, { from: 'bot', text: j.answer || 'No answer returned by model' }]
+      })
     } catch (e) {
-      setMsgs((m) => [...m, { from: 'bot', text: 'Error contacting backend' }])
+      setMsgs((m) => {
+        const withoutTyping = m.slice(0, -1)
+        return [...withoutTyping, { from: 'bot', text: 'Error contacting backend' }]
+      })
     } finally {
       setLoading(false)
     }
   }
 
+  const messagesRef = useRef<HTMLDivElement | null>(null)
+  // auto-scroll when messages change
+  useEffect(() => {
+    const el = messagesRef.current
+    if (el) {
+      el.scrollTop = el.scrollHeight
+    }
+  }, [msgs, loading])
+
   return (
     <div className="chat-box">
-      <div className="messages">
+      <div className="messages" ref={messagesRef}>
         {msgs.map((m, i) => (
-          <div key={i} className={"msg " + m.from}>{m.text}</div>
+          <div key={i} className={"msg " + m.from}>
+            {m.text === 'Thinking...' ? (
+              <span className="typing">
+                <span className="dot" />
+                <span className="dot" />
+                <span className="dot" />
+              </span>
+            ) : (
+              m.text
+            )}
+          </div>
         ))}
       </div>
       <div className="composer">
