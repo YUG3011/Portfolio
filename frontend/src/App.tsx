@@ -83,20 +83,25 @@ export default function App() {
       <div className="bg-glow bg-glow-1" />
       <div className="bg-glow bg-glow-2" />
       <header className="hero">
-        <p className="eyebrow">Hello, I am</p>
-        <h1>
-          Yug Vachhani
-          <span className="accent-dot">•</span>
-          Full Stack Developer
-        </h1>
-        <p className="lede">I build scalable web applications using React, Node.js, and MongoDB, with a strong focus on clean UI and reliable backend architecture.</p>
-        <div className="hero-links">
-          <a className="hero-link" href="https://github.com/YUG3011" target="_blank" rel="noreferrer">GitHub /YUG3011</a>
-          <a className="hero-link" href="https://www.linkedin.com/in/yug-vachhani-bb4133251/" target="_blank" rel="noreferrer">LinkedIn /yug-vachhani</a>
-        </div>
-        <div className="hero-actions">
-          <a className="button primary" href="#skills">Explore portfolio</a>
-          <button className="button ghost" onClick={() => setChatOpen(true)}>Open chat</button>
+        <div className="hero-main">
+          <img className="hero-photo" src="/YugPatel.png" alt="Yug Vachhani" />
+          <div className="hero-text">
+            <p className="eyebrow">Hello, I am</p>
+            <h1>
+              Yug Vachhani
+              <span className="accent-dot">•</span>
+              Full Stack Developer
+            </h1>
+            <p className="lede">I build scalable web applications using React, Node.js, and MongoDB, with a strong focus on clean UI and reliable backend architecture.</p>
+            <div className="hero-links">
+              <a className="hero-link" href="https://github.com/YUG3011" target="_blank" rel="noreferrer">GitHub /YUG3011</a>
+              <a className="hero-link" href="https://www.linkedin.com/in/yug-vachhani-bb4133251/" target="_blank" rel="noreferrer">LinkedIn /yug-vachhani</a>
+            </div>
+            <div className="hero-actions">
+              <a className="button primary" href="#skills">Explore portfolio</a>
+              <button className="button ghost" onClick={() => setChatOpen(true)}>Open chat</button>
+            </div>
+          </div>
         </div>
         <div className="hero-grid single-row">
           <div className="stat">
