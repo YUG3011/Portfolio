@@ -129,6 +129,15 @@ export default function App() {
                 </svg>
                 LinkedIn /yug-vachhani
               </a>
+              <a className="hero-link" href="https://leetcode.com/u/B2tMpLTENh/" target="_blank" rel="noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M14.1 3.3a1 1 0 0 1 1.4 0l4.9 4.9a1 1 0 0 1 0 1.4l-4.9 4.9a1 1 0 1 1-1.4-1.4l3.2-3.2H7.5a1 1 0 1 1 0-2h9.8l-3.2-3.2a1 1 0 0 1 0-1.4ZM6.2 12a1 1 0 0 1 1 1v4.3a1.7 1.7 0 0 0 1.7 1.7h8.3a1 1 0 1 1 0 2H8.9a3.7 3.7 0 0 1-3.7-3.7V13a1 1 0 0 1 1-1Z"
+                  />
+                </svg>
+                LeetCode /B2tMpLTENh
+              </a>
             </div>
             <div className="hero-actions">
               <a className="button primary" href="#skills">Explore portfolio</a>
