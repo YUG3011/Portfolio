@@ -111,8 +111,24 @@ export default function App() {
             </h1>
             <p className="lede">I build scalable web applications using React, Node.js, and MongoDB, with a strong focus on clean UI and reliable backend architecture.</p>
             <div className="hero-links">
-              <a className="hero-link" href="https://github.com/YUG3011" target="_blank" rel="noreferrer">GitHub /YUG3011</a>
-              <a className="hero-link" href="https://www.linkedin.com/in/yug-vachhani-bb4133251/" target="_blank" rel="noreferrer">LinkedIn /yug-vachhani</a>
+              <a className="hero-link" href="https://github.com/YUG3011" target="_blank" rel="noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.24c-3.34.73-4.04-1.41-4.04-1.41a3.18 3.18 0 0 0-1.34-1.76c-1.1-.75.08-.73.08-.73a2.53 2.53 0 0 1 1.85 1.25 2.6 2.6 0 0 0 3.56 1 2.6 2.6 0 0 1 .77-1.63c-2.67-.3-5.47-1.33-5.47-5.9a4.63 4.63 0 0 1 1.23-3.22 4.3 4.3 0 0 1 .12-3.18s1-.32 3.3 1.23a11.4 11.4 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23a4.3 4.3 0 0 1 .12 3.18 4.62 4.62 0 0 1 1.23 3.22c0 4.58-2.8 5.6-5.48 5.9a2.9 2.9 0 0 1 .82 2.25v3.33c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"
+                  />
+                </svg>
+                GitHub /YUG3011
+              </a>
+              <a className="hero-link" href="https://www.linkedin.com/in/yug-vachhani-bb4133251/" target="_blank" rel="noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.63-1.85 3.35-1.85 3.58 0 4.24 2.35 4.24 5.41v6.33ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.54V9H7.1v11.45ZM22.23 0H1.77A1.76 1.76 0 0 0 0 1.74v20.52C0 23.22.79 24 1.77 24h20.46A1.77 1.77 0 0 0 24 22.26V1.74A1.77 1.77 0 0 0 22.23 0Z"
+                  />
+                </svg>
+                LinkedIn /yug-vachhani
+              </a>
             </div>
             <div className="hero-actions">
               <a className="button primary" href="#skills">Explore portfolio</a>
