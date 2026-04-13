@@ -260,6 +260,7 @@ export default function App() {
           <div>
             <p className="eyebrow">AI Assistant</p>
             <h3>Ask anything about my resume</h3>
+            <span className="chat-note">Responses may be slow</span>
           </div>
           <button className="icon-btn" onClick={() => setChatOpen(false)} aria-label="Close chat">×</button>
         </div>

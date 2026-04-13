@@ -11,6 +11,56 @@ export default function Chat() {
   const isVercelHost = typeof window !== 'undefined' && window.location.hostname.endsWith('vercel.app')
   const apiBase = configuredApiBase || (isVercelHost ? defaultProdApiBase : '')
 
+  const renderInlineBold = (text: string) => {
+    const chunks = text.split(/(\*\*.*?\*\*)/g)
+    return chunks.map((chunk, index) => {
+      if (chunk.startsWith('**') && chunk.endsWith('**')) {
+        return <strong key={index}>{chunk.slice(2, -2)}</strong>
+      }
+      return <React.Fragment key={index}>{chunk}</React.Fragment>
+    })
+  }
+
+  const renderBotMessage = (rawText: string) => {
+    const text = rawText.replace(/\s\|\s/g, '\n\n').replace(/\r/g, '')
+    const lines = text.split('\n')
+
+    return (
+      <div className="bot-rich">
+        {lines.map((line, index) => {
+          const trimmed = line.trim()
+          if (!trimmed) return <div key={index} className="msg-gap" />
+
+          const numbered = trimmed.match(/^(\d+[.)])\s+(.*)$/)
+          if (numbered) {
+            return (
+              <p key={index} className="msg-line num">
+                <span className="marker">{numbered[1]}</span>
+                <span>{renderInlineBold(numbered[2])}</span>
+              </p>
+            )
+          }
+
+          const bullet = trimmed.match(/^[-*]\s+(.*)$/)
+          if (bullet) {
+            return (
+              <p key={index} className="msg-line bullet">
+                <span className="marker">•</span>
+                <span>{renderInlineBold(bullet[1])}</span>
+              </p>
+            )
+          }
+
+          if (trimmed.endsWith(':')) {
+            return <p key={index} className="msg-title">{renderInlineBold(trimmed)}</p>
+          }
+
+          return <p key={index} className="msg-line">{renderInlineBold(trimmed)}</p>
+        })}
+      </div>
+    )
+  }
+
   async function send() {
     if (!text.trim()) return
     const q = text.trim()
@@ -94,6 +144,8 @@ export default function Chat() {
                 <span className="dot" />
                 <span className="dot" />
               </span>
+            ) : m.from === 'bot' ? (
+              renderBotMessage(m.text)
             ) : (
               m.text
             )}

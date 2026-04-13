@@ -466,6 +466,19 @@ a {
 .chat-drawer h3 {
   margin: 2px 0 0;
 }
+.chat-note {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 195, 94, 0.4);
+  background: rgba(255, 195, 94, 0.12);
+  color: #ffd68a;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
 .icon-btn {
   background: transparent;
   border: 1px solid var(--line);
@@ -511,6 +524,39 @@ a {
 }
 .msg.bot {
   background: #072a1f;
+}
+.bot-rich {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.msg-title {
+  margin: 0.1rem 0 0.35rem;
+  color: #dff8eb;
+  font-weight: 700;
+}
+.msg-line {
+  margin: 0.1rem 0;
+  line-height: 1.55;
+}
+.msg-line.num,
+.msg-line.bullet {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
+  align-items: start;
+}
+.msg-line .marker {
+  color: #9de7c8;
+  font-weight: 700;
+  min-width: 18px;
+}
+.msg-gap {
+  height: 8px;
+}
+.bot-rich strong {
+  color: #fff;
+  font-weight: 700;
 }
 
 /* Typing indicator (three animated dots) */
