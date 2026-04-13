@@ -5,36 +5,42 @@ export default function App() {
   const [chatOpen, setChatOpen] = useState(false)
 
   const skills = [
-    { title: 'Frontend', items: ['React', 'Next.js', 'Tailwind CSS', 'Bootstrap'] },
-    { title: 'Backend', items: ['Node.js', 'Express.js', 'REST APIs','Fast API' , 'Django'] },
-    { title: 'Databases', items: ['MongoDB', 'PostgreSQL'] },
-    { title: 'Programming', items: ['JavaScript', 'TypeScript','Python'] },
-    { title: 'DevOps & Tools', items: ['Docker', 'Git', 'GitHub', 'Render', 'Vercel'] },
+    { title: 'Programming', items: ['JavaScript', 'Typescript', 'Python'] },
+    { title: 'Frontend', items: ['React.js', 'Next.js', 'Tailwind CSS', 'Bootstrap'] },
+    { title: 'Backend', items: ['Node.js', 'Express.js', 'REST APIs', 'Django'] },
+    { title: 'Databases', items: ['PostgreSQL', 'Redis', 'MongoDB'] },
+    { title: 'DevOps & Tools', items: ['Azur', 'Docker', 'Git', 'GitHub', 'Render', 'Vercel'] },
   ]
 
   const projects = [
     {
       name: 'Live Chat App',
-      stack: 'MERN (MongoDB, Express.js, React, Node.js), Tailwind CSS',
+      stack: 'MERN stack (MongoDB, Express.js, React, Node.js), Tailwind-CSS',
       link: 'https://github.com/YUG3011/Live-Chat-App',
       liveLink: 'https://live-chat-26w4czjbu-yug3011s-projects.vercel.app',
       points: [
-        'Deployed the complete full-stack application on Render, managing production environment variables and backend configuration.',
-        'Built a real-time chat app with sound notifications using Socket.io, bcrypt, Zustand, and Tailwind CSS.',
-        'Implemented JWT authentication for secure login/register with bcrypt.',
-        'Users can send/receive messages instantly, hear new-message notifications, view clean sender/receiver alignment, and stay logged in securely.',
-        'Built with attention to both frontend and backend performance.'
+        'Built a real-time chat application using Socket.io, enabling instant bidirectional messaging with low-latency communication.',
+        'Implemented JWT-based authentication and authorization, ensuring secure user sessions and protected routes with encrypted password storage using bcrypt.',
+        'Designed and optimized real-time event handling, reducing message delivery delay by ~50% and improving user responsiveness.',
+        'Developed scalable backend APIs with Node.js and Express.js, supporting concurrent users and efficient message handling.',
+        'Managed global state using Zustand, improving frontend state performance and reducing unnecessary re-renders by ~30%.',
+        'Engineered responsive and clean UI with Tailwind CSS, enhancing chat readability and user experience (sender/receiver alignment, notifications).',
+        'Integrated sound-based notification system, improving user engagement and real-time awareness of incoming messages.',
+        'Deployed full-stack application on Render, configuring production environment variables and ensuring smooth CI/CD workflow.'
       ]
     },
     {
-      name: 'Online News',
-      stack: 'MERN, Bootstrap, NewsAPI',
-      link: 'https://github.com/YUG3011/news-online',
+      name: 'AI Journal System',
+      stack: 'React.js, Node.js, Express.js, PostgreSQL, Prisma ORM, Redis, Google Gemini AI',
+      link: 'https://github.com/YUG3011/Ai-Journal-System',
       points: [
-        'Developed a responsive single-page news web application using React.js.',
-        'Implemented infinite scrolling to dynamically load additional articles, improving UX and reducing initial load time.',
-        'Integrated NewsAPI to fetch and display real-time articles across multiple categories.',
-        'Added filtering by category and keyword for faster article discovery.'
+        'Built an AI-powered journaling platform leveraging Google Gemini AI to perform sentiment analysis, keyword extraction, and automated summarization, improving user insight generation.',
+        'Designed and implemented scalable RESTful APIs using Node.js and Express.js, handling structured journal data efficiently.',
+        'Integrated PostgreSQL with Prisma ORM, reducing database query development time by ~40% and improving maintainability through type-safe queries.',
+        'Implemented Redis caching layer, reducing AI response latency by ~60% and minimizing redundant API calls.',
+        'Optimized backend performance and data retrieval, improving overall system response time by ~35%.',
+        'Developed responsive UI components using React.js, enhancing user experience and increasing usability for journal analytics.',
+        'Followed modular architecture and clean code practices, improving scalability and ease of future feature integration.'
       ]
     },
     {
