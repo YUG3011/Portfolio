@@ -4,6 +4,17 @@ import Chat from './components/Chat'
 export default function App() {
   const [chatOpen, setChatOpen] = useState(false)
 
+  const renderWithBold = (text: string) => {
+    const parts = text.split(/(\*\*.*?\*\*)/g)
+    return parts.map((part, index) =>
+      part.startsWith('**') && part.endsWith('**') ? (
+        <strong key={index}>{part.slice(2, -2)}</strong>
+      ) : (
+        <React.Fragment key={index}>{part}</React.Fragment>
+      )
+    )
+  }
+
   const skills = [
     { title: 'Programming', items: ['JavaScript', 'Typescript', 'Python'] },
     { title: 'Frontend', items: ['React.js', 'Next.js', 'Tailwind CSS', 'Bootstrap'] },
@@ -19,14 +30,14 @@ export default function App() {
       link: 'https://github.com/YUG3011/Live-Chat-App',
       liveLink: 'https://live-chat-26w4czjbu-yug3011s-projects.vercel.app',
       points: [
-        'Built a real-time chat application using Socket.io, enabling instant bidirectional messaging with low-latency communication.',
-        'Implemented JWT-based authentication and authorization, ensuring secure user sessions and protected routes with encrypted password storage using bcrypt.',
-        'Designed and optimized real-time event handling, reducing message delivery delay by ~50% and improving user responsiveness.',
+        'Built a **real-time chat application** using **Socket.io**, enabling instant bidirectional messaging with low-latency communication.',
+        'Implemented **JWT-based authentication and authorization**, ensuring secure user sessions and protected routes with encrypted password storage using bcrypt.',
+        'Designed and optimized **real-time event handling**, reducing message delivery delay by **~50%** and improving user responsiveness.',
         'Developed scalable backend APIs with Node.js and Express.js, supporting concurrent users and efficient message handling.',
-        'Managed global state using Zustand, improving frontend state performance and reducing unnecessary re-renders by ~30%.',
+        'Managed global state using **Zustand**, improving frontend state performance and reducing unnecessary re-renders by **~30%**.',
         'Engineered responsive and clean UI with Tailwind CSS, enhancing chat readability and user experience (sender/receiver alignment, notifications).',
-        'Integrated sound-based notification system, improving user engagement and real-time awareness of incoming messages.',
-        'Deployed full-stack application on Render, configuring production environment variables and ensuring smooth CI/CD workflow.'
+        'Integrated **sound-based notification system**, improving user engagement and real-time awareness of incoming messages.',
+        'Deployed full-stack application on **Render**, configuring production environment variables and ensuring smooth CI/CD workflow.'
       ]
     },
     {
@@ -34,11 +45,11 @@ export default function App() {
       stack: 'React.js, Node.js, Express.js, PostgreSQL, Prisma ORM, Redis, Google Gemini AI',
       link: 'https://github.com/YUG3011/Ai-Journal-System',
       points: [
-        'Built an AI-powered journaling platform leveraging Google Gemini AI to perform sentiment analysis, keyword extraction, and automated summarization, improving user insight generation.',
-        'Designed and implemented scalable RESTful APIs using Node.js and Express.js, handling structured journal data efficiently.',
-        'Integrated PostgreSQL with Prisma ORM, reducing database query development time by ~40% and improving maintainability through type-safe queries.',
-        'Implemented Redis caching layer, reducing AI response latency by ~60% and minimizing redundant API calls.',
-        'Optimized backend performance and data retrieval, improving overall system response time by ~35%.',
+        'Built an AI-powered journaling platform leveraging **Google Gemini AI** to perform **sentiment analysis, keyword extraction, and automated summarization**, improving user insight generation.',
+        'Designed and implemented **scalable RESTful APIs** using Node.js and Express.js, handling structured journal data efficiently.',
+        'Integrated **PostgreSQL with Prisma ORM**, reducing database query development time by **~40%** and improving maintainability through type-safe queries.',
+        'Implemented **Redis caching layer**, reducing AI response latency by **~60%** and minimizing redundant API calls.',
+        'Optimized backend performance and data retrieval, improving overall system response time by **~35%**.',
         'Developed responsive UI components using React.js, enhancing user experience and increasing usability for journal analytics.',
         'Followed modular architecture and clean code practices, improving scalability and ease of future feature integration.'
       ]
@@ -167,7 +178,7 @@ export default function App() {
                 </div>
                 <ul>
                   {p.points.map((point) => (
-                    <li key={point}>{point}</li>
+                    <li key={point}>{renderWithBold(point)}</li>
                   ))}
                 </ul>
               </div>
