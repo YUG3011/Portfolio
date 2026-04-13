@@ -361,6 +361,16 @@ a {
   color: var(--muted);
   line-height: 1.5;
 }
+#projects .card ul li {
+  margin-bottom: 12px;
+}
+#projects .card ul li:last-child {
+  margin-bottom: 0;
+}
+#projects .card ul strong {
+  color: #fff;
+  font-weight: 700;
+}
 .cards.timeline {
   position: relative;
   padding-left: 12px;
