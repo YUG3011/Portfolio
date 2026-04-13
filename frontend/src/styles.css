@@ -535,6 +535,16 @@ a {
   color: #dff8eb;
   font-weight: 700;
 }
+.msg-project-title {
+  margin: 0.5rem 0 0.45rem;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+}
 .msg-line {
   margin: 0.1rem 0;
   line-height: 1.55;
@@ -552,7 +562,7 @@ a {
   min-width: 18px;
 }
 .msg-gap {
-  height: 8px;
+  height: 14px;
 }
 .bot-rich strong {
   color: #fff;

@@ -55,6 +55,10 @@ export default function Chat() {
             return <p key={index} className="msg-title">{renderInlineBold(trimmed)}</p>
           }
 
+          if (/^\*\*[^*]+\*\*$/.test(trimmed)) {
+            return <p key={index} className="msg-project-title">{renderInlineBold(trimmed)}</p>
+          }
+
           return <p key={index} className="msg-line">{renderInlineBold(trimmed)}</p>
         })}
       </div>

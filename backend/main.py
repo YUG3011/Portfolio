@@ -161,13 +161,19 @@ async def chat(q: Question):
             )
         if wants_projects:
             parts.append(
-                "Projects: 1) Live Chat App — MERN stack (MongoDB, Express.js, React, Node.js), Tailwind-CSS. "
-                "Highlights: Socket.io real-time messaging, JWT + bcrypt auth, optimized event handling (~50% lower delay), "
-                "Zustand state optimization (~30% fewer re-renders), sound notifications, deployed on Render with CI/CD. "
-                "2) AI Journal System — React.js, Node.js, Express.js, PostgreSQL, Prisma ORM, Redis, Google Gemini AI. "
-                "Highlights: sentiment analysis/keyword extraction/summarization, scalable REST APIs, PostgreSQL + Prisma (~40% faster query development), "
-                "Redis caching (~60% lower AI latency), overall response-time improvement (~35%), modular clean architecture. "
-                "3) Text Utils — React, Bootstrap. Text transformations and word/letter counting."
+                "Projects:\n"
+                "\n"
+                "**Live Chat App**\n"
+                "- Stack: MERN stack (MongoDB, Express.js, React, Node.js), Tailwind-CSS\n"
+                "- Highlights: Socket.io real-time messaging, JWT + bcrypt auth, optimized event handling (~50% lower delay), Zustand state optimization (~30% fewer re-renders), sound notifications, deployed on Render with CI/CD.\n"
+                "\n"
+                "**AI Journal System**\n"
+                "- Stack: React.js, Node.js, Express.js, PostgreSQL, Prisma ORM, Redis, Google Gemini AI\n"
+                "- Highlights: sentiment analysis, keyword extraction, automated summarization, scalable REST APIs, PostgreSQL + Prisma (~40% faster query development), Redis caching (~60% lower AI latency), overall response-time improvement (~35%), modular clean architecture.\n"
+                "\n"
+                "**Text Utils**\n"
+                "- Stack: React, Bootstrap\n"
+                "- Highlights: text transformations and word/letter counting."
             )
         return {"answer": " | ".join(parts)}
 
