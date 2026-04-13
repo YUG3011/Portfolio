@@ -200,10 +200,23 @@ a {
   font-size: 14px;
   background: rgba(255, 255, 255, 0.02);
 }
-.hero-link svg {
-  width: 16px;
-  height: 16px;
+.social-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+}
+.social-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.social-icon.github {
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 2px;
 }
 .hero-link:hover {
   border-color: var(--accent);
