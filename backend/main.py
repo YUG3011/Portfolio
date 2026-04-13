@@ -21,6 +21,7 @@ Email: yug30112005@gmail.com
 Location: Rajkot, Gujarat
 GitHub: https://github.com/YUG3011
 LinkedIn: https://www.linkedin.com/in/yug-vachhani-bb4133251/
+LeetCode: https://leetcode.com/u/B2tMpLTENh/
 Education:
 - Marwadi University, B.Tech Information Technology (Jun 2024 – 2027), CGPA: 7.59
 - Darshan University, Diploma Computer Engineering (Jun 2021 – 2024), CGPA: 7.03
@@ -28,15 +29,15 @@ Experience:
 - Sofzenix IT Solutions | Full Stack Developer Intern (Jul 2025 – Present), Rajkot, Gujarat
     Tech: MongoDB, Express.js, React, Node.js, Tailwind CSS, Next.js. Built Hotel Management and Accounting Management projects; delivered responsive UIs.
 Projects:
-- Live Chat App (MERN, Tailwind CSS). Deployed on Render; real-time chat with Socket.io, JWT auth, bcrypt, Zustand; notification sounds.
-- Online News (MERN, Bootstrap). SPA with infinite scrolling; NewsAPI integration; category/keyword filters.
+- Live Chat App (MERN stack (MongoDB, Express.js, React, Node.js), Tailwind-CSS): Built a real-time chat application using Socket.io, implemented JWT-based authentication and authorization with bcrypt, optimized real-time event handling (~50% lower message delay), developed scalable backend APIs, managed global state with Zustand (~30% fewer unnecessary re-renders), engineered responsive UI with sender/receiver alignment and notifications, integrated sound-based notification system, and deployed on Render with smooth CI/CD setup.
+- AI Journal System (React.js, Node.js, Express.js, PostgreSQL, Prisma ORM, Redis, Google Gemini AI): Built an AI-powered journaling platform for sentiment analysis, keyword extraction, and automated summarization; designed scalable RESTful APIs; integrated PostgreSQL with Prisma ORM (~40% faster query development); implemented Redis caching (~60% lower AI latency); optimized backend/data retrieval (~35% better overall response time); developed responsive React.js UI; followed modular clean architecture.
 - Text Utils (React, Bootstrap). Text transformations and counts.
 Technical Skills:
-- Programming: JavaScript, TypeScript
-- Frontend: React, Next.js, Tailwind CSS, Bootstrap
-- Backend: Node.js, Express.js, REST APIs
-- Databases: MongoDB, PostgreSQL
-- DevOps/Tools: Docker, Git, GitHub, Render, Vercel
+- Programming: JavaScript, Typescript, Python
+- Frontend: React.js, Next.js, Tailwind CSS, Bootstrap
+- Backend: Node.js, Express.js, REST APIs, Django
+- Databases: PostgreSQL, Redis, MongoDB
+- DevOps/Tools: Azur, Docker, Git, GitHub, Render, Vercel
 Certificates: Google AI Essential (Coursera); MERN Stack (Simplilearn); Linux Essentials (Cisco); Python for Data-Science (IBM); Java Programming Fundamentals (Infosys); MATLAB — Advance Your Career with MATLAB Programming; J2EE Comprehensive Training Course; Beginning Java Data Structures and Algorithms; CSS3; Database and SQL; Networking Essentials; Android Material Design — The Fundamentals; Basic C# Programming; Building Recommender Systems with Machine Learning and AI; Software Testing Fundamentals
 """
 
@@ -128,14 +129,46 @@ async def chat(q: Question):
     q_lower = q.question.lower().strip()
     github_url = "https://github.com/YUG3011"
     linkedin_url = "https://www.linkedin.com/in/yug-vachhani-bb4133251/"
+    leetcode_url = "https://leetcode.com/u/B2tMpLTENh/"
     wants_github = 'github' in q_lower
     wants_linkedin = 'linkedin' in q_lower or 'linked in' in q_lower
-    if wants_github or wants_linkedin:
+    wants_leetcode = 'leetcode' in q_lower or 'leet code' in q_lower
+    if wants_github or wants_linkedin or wants_leetcode:
         parts = []
         if wants_github:
             parts.append(f"GitHub: {github_url}")
         if wants_linkedin:
             parts.append(f"LinkedIn: {linkedin_url}")
+        if wants_leetcode:
+            parts.append(f"LeetCode: {leetcode_url}")
+        return {"answer": " | ".join(parts)}
+
+    wants_skills = any(k in q_lower for k in (
+        'skill', 'skills', 'tech stack', 'technical stack', 'technical skills', 'technology', 'technologies'
+    ))
+    wants_projects = any(k in q_lower for k in (
+        'project', 'projects', 'portfolio project', 'portfolio projects', 'work samples', 'selected work'
+    ))
+    if wants_skills or wants_projects:
+        parts = []
+        if wants_skills:
+            parts.append(
+                "Technical Skills: Programming: JavaScript, Typescript, Python | "
+                "Frontend: React.js, Next.js, Tailwind CSS, Bootstrap | "
+                "Backend: Node.js, Express.js, REST APIs, Django | "
+                "Databases: PostgreSQL, Redis, MongoDB | "
+                "DevOps & Tools: Azur, Docker, Git, GitHub, Render, Vercel"
+            )
+        if wants_projects:
+            parts.append(
+                "Projects: 1) Live Chat App — MERN stack (MongoDB, Express.js, React, Node.js), Tailwind-CSS. "
+                "Highlights: Socket.io real-time messaging, JWT + bcrypt auth, optimized event handling (~50% lower delay), "
+                "Zustand state optimization (~30% fewer re-renders), sound notifications, deployed on Render with CI/CD. "
+                "2) AI Journal System — React.js, Node.js, Express.js, PostgreSQL, Prisma ORM, Redis, Google Gemini AI. "
+                "Highlights: sentiment analysis/keyword extraction/summarization, scalable REST APIs, PostgreSQL + Prisma (~40% faster query development), "
+                "Redis caching (~60% lower AI latency), overall response-time improvement (~35%), modular clean architecture. "
+                "3) Text Utils — React, Bootstrap. Text transformations and word/letter counting."
+            )
         return {"answer": " | ".join(parts)}
 
     # FAQ shortcuts: achievements/certificates, email, phone, location
