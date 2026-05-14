@@ -103,7 +103,7 @@ export default function App() {
         <div className="hero-main">
           <img className="hero-photo" src="/YugPatel.png" alt="Yug Vachhani" />
           <div className="hero-text">
-            <p className="eyebrow">Hello, I am</p>
+            <p className="eyebrow">Hello, my self</p>
             <h1>
               Yug Vachhani
               <span className="accent-dot">•</span>
